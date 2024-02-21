@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 6531b715b04a1b44d970a3722cae139f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - srPlayer: {instanceID: 0}
+  - srWeapon: {instanceID: 0}
+  - PlayerWithMG: {instanceID: 0}
+  - PlayerWithPistol: {instanceID: 0}
+  - PlayerWithKnife: {instanceID: 0}
+  - PlayerWithFork: {instanceID: 0}
+  - PlayerWithPencil: {instanceID: 0}
+  - weapon: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
