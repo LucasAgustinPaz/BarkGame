@@ -11,6 +11,7 @@ TagManager:
   - Spike
   - Weapon
   - MachineGun
+  - Enemy
   layers:
   - Default
   - TransparentFX
