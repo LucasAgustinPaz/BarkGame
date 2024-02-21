@@ -22,7 +22,9 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 StandingSize;
     public Vector2 CrouchingSize;
 
-    
+    Vector2 mousePos;
+
+
 
 
     void Start()
@@ -37,6 +39,18 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        mousePos = new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y);
+
+        if (mousePos.x < Screen.width / 2)
+        {
+            SpriteRenderer.flipX = true;
+        }
+
+        if (mousePos.x > Screen.width / 2)
+        {
+            SpriteRenderer.flipX = false;
+        }
+
         if (Input.GetKeyDown("w"))
         {
             Jump();
@@ -49,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         {
             MoveLeft();
         }
-        
+
         if (Input.GetKey("s") && inGround)
         {
             Crouch();
@@ -62,7 +76,8 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Stands");
         }
 
-        if(!isCrouching && inGround && jumpsCount == 0){
+        if (!isCrouching && inGround && jumpsCount == 0)
+        {
             actualSprite = SpriteRenderer.sprite;
         }
     }
@@ -102,17 +117,19 @@ public class PlayerMovement : MonoBehaviour
             player.transform.position += Vector3.down * speed * Time.deltaTime;
             SpriteRenderer.sprite = Crouching;
             Debug.Log("Crouch");
-            
+
         }
     }
 
     void MoveRight()
     {
+        
         player.transform.position += Vector3.right * speed * Time.deltaTime;
     }
 
     void MoveLeft()
     {
+        
         player.transform.position += Vector3.left * speed * Time.deltaTime;
     }
 }
