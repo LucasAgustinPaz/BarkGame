@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     int jumpsCount;
     public int maxJumps;
     public SpriteRenderer SpriteRenderer;
-    public BoxCollider2D Collider;
 
     public Sprite Idle;
     public Sprite Crouching;
@@ -59,10 +58,8 @@ public class PlayerMovement : MonoBehaviour
         {
             isCrouching = false;
             SpriteRenderer.sprite = actualSprite;
-            Collider.size = StandingSize;
             player.transform.position = new Vector3(player.transform.position.x, 1.811f, player.transform.position.z);
             Debug.Log("Stands");
-            Debug.Log(Collider.size);
         }
 
         if(!isCrouching && inGround && jumpsCount == 0){
@@ -104,9 +101,7 @@ public class PlayerMovement : MonoBehaviour
             isCrouching = true;
             player.transform.position += Vector3.down * speed * Time.deltaTime;
             SpriteRenderer.sprite = Crouching;
-            Collider.size = CrouchingSize;
             Debug.Log("Crouch");
-            Debug.Log(Collider.size);
             
         }
     }
